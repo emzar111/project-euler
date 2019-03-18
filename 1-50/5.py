@@ -1,9 +1,6 @@
 from math import sqrt
 
 
-result = 1
-
-
 def simple_numbers(number):
     simple_list = [2, 3, 5]
 
@@ -26,16 +23,26 @@ def simple_numbers(number):
     return simple_list
 
 
-d_nums = {i: 1 for i in simple_numbers(20)}
+def d_count_number(number, n):
+    count = 0
+    while number % n == 0:
+        count += 1
+        if number == n:
+            break
+        number /= n
+    return count
 
-for i in range (2, 21):
+
+d_nums = {i: 0 for i in simple_numbers(20)}
+result = 1
+
+for i in range(2, 21):
     for s in simple_numbers(i):
-        if i % s == 0:
-            if i // s > d_nums[s]:
-                d_nums[s] = i // s
+        if d_count_number(i, s) > d_nums[s]:
+            d_nums[s] = d_count_number(i, s)
 
-print(d_nums)
+for s in d_nums.keys():
+    result *= s ** d_nums[s]
 
-for i in d_nums.keys():
-    result *= (i**d_nums[i])
-print(d_nums)
+
+print(result)
