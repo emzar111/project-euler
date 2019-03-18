@@ -4,11 +4,11 @@ num = 600851475143
 nod_simple = 1
 
 
-def simple_number(number):
+def simple_numbers(number):
     lst = [2, 3, 5]
 
     if number == 2:
-        lst = 2
+        lst = [2]
         return lst
     if number == 3:
         lst = [2, 3]
