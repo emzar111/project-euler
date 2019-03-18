@@ -1,4 +1,7 @@
 from math import sqrt
+import time
+
+start_time = time.time()
 
 
 def simple_number(n):
@@ -30,3 +33,4 @@ def simple_number(n):
 
 
 print(simple_number(10001))
+print("--- %s seconds ---" % (time.time() - start_time))
