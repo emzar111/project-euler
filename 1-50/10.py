@@ -25,4 +25,6 @@ def simple_numbers(number):
                 break
     return lst
 
+
 print(sum(simple_numbers(2000000)))
+
